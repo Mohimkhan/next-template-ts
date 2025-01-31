@@ -11,6 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        "primary-color": "var(--primary-color)",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
