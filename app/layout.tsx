@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./globals.css";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import Header from "@/components/common/Header";
