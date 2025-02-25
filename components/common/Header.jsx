@@ -105,9 +105,9 @@ const Header = () => {
             </ul>
           </div>
         </div>
-        <div className="mx-auto sm:mx-0">
+        <div className="mx-auto sm:mx-0 flex gap-4">
           <Link
-            className="btn btn-ghost text-xl text-primary-color gap-0"
+            className="btn btn-ghost text-xl text-primary-color gap-0 border-none p-0"
             href="/"
           >
             <div>
