@@ -71,7 +71,7 @@ export const useDebounce = <T>(value: T, delay: number = 500): T => {
 };
 
 export const usePortal = (domNode?: HTMLElement | null) => {
-  const portalRoot = domNode || document.getElementById("portal-root");
+  const portalRoot = domNode || document.getElementById("portal-root") as HTMLElement;
 
   if (!portalRoot) {
     throw new Error(
