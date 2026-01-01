@@ -9,6 +9,11 @@ export const auth = betterAuth({
     maxPasswordLength: 128,
     minPasswordLength: 8,
   },
+  advanced: {
+    database: {
+      generateId: false,
+    },
+  },
   socialProviders: {
     google: {
       prompt: "select_account",
