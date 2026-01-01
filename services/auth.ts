@@ -22,5 +22,9 @@ export const auth = betterAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     },
   },
+  trustedOrigins: [
+    "http://localhost:3000",
+    process.env.PRODUCTION_APP_URL as string,
+  ],
   plugins: [nextCookies()], // make sure this is the last plugin in the array
 });
