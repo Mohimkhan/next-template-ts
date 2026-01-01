@@ -1,38 +1,21 @@
-import NextAuth from "next-auth";
-import Google from "next-auth/providers/google";
-import GitHubProvider from "next-auth/providers/github";
+import { betterAuth } from "better-auth";
+import { nextCookies } from "better-auth/next-js";
 
-export const { handlers, signIn, signOut, auth } = NextAuth({
-  providers: [
-    Google({
-      clientId: process.env.AUTH_GOOGLEF_CLIENT_ID,
-      clientSecret: process.env.AUTH_GOOGLEF_CLIENT_SECRET,
-      authorization: {
-        params: {
-          prompt: "consent",
-          access_type: "offline",
-          response_type: "code",
-        },
-      },
-    }),
-    GitHubProvider({
-      clientId: process.env.AUTH_GITHUB_CLIENT_ID,
-      clientSecret: process.env.AUTH_GItHUB_CLIENT_SECRET,
-      authorization: {
-        params: {
-          prompt: "consent",
-          access_type: "offline",
-          response_type: "code",
-        },
-      },
-    }),
-  ],
-  secret: process.env.AUTH_SECRET,
-  session: {
-    strategy: "jwt",
+export const auth = betterAuth({
+  baseURL: process.env.BETTER_AUTH_URL,
+  emailAndPassword: {
+    enabled: true,
+    requireEmailVerification: true,
+    maxPasswordLength: 128,
+    minPasswordLength: 8,
   },
-  callbacks: {
-    async jwt({ account, token, user, session }) {},
-    async session({ token, user}) {},
+  socialProviders: {
+    google: {
+      prompt: "select_account",
+      accessType: "offline",
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+    },
   },
+  plugins: [nextCookies()], // make sure this is the last plugin in the array
 });
