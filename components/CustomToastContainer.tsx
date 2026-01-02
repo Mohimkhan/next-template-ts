@@ -9,7 +9,7 @@ const CustomToastContainer = () => {
   return (
     <ToastContainer
       position="top-right"
-      limit={1}
+      limit={3}
       transition={Bounce}
       theme={theme}
       pauseOnHover
