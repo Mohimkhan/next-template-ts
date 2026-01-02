@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
+import "react-toastify/dist/ReactToastify.css";
+import CustomToastContainer from "@/components/CustomToastContainer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -43,6 +45,7 @@ export default function RootLayout({
         >
           <div className="container mx-auto px-[10px] sm:px-0">
             <Header />
+            <CustomToastContainer />
             {children}
             <Footer />
           </div>
