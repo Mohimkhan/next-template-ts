@@ -2,15 +2,17 @@
 import Link from "next/link";
 import { AnimatedTooltip } from "../ui/animated-tooltip";
 import { useState } from "react";
-import { signOut, useSession } from "next-auth/react";
 import { appName, LOGOUT_MODAL_ID } from "@/constants";
 import LogoutModal from "../modals/LogoutModal";
 import { ThemeBtn } from "./ThemeBtn";
 import { KeyboardIcon, Crown, Settings, User, LogOut } from "lucide-react";
+import { authClient } from "@/lib/auth-client";
 
 const Header = () => {
-  const { data: session } = useSession();
+  const { data: session } = authClient.useSession();
   const [isUserActionVisible, setIsUserActionVisible] = useState(false);
+
+  console.log("session ", session?.user?.id);
 
   return (
     <>
@@ -204,7 +206,7 @@ const Header = () => {
       <LogoutModal
         onConfirmation={() => {
           setIsUserActionVisible(false);
-          signOut();
+          authClient.signOut();
         }}
         onCancellation={() => setIsUserActionVisible(false)}
       />

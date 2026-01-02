@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
-import { SessionProvider } from "next-auth/react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -42,14 +41,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {" "}
-          <SessionProvider>
-            <div className="container mx-auto px-[10px] sm:px-0">
-              <Header />
-              {children}
-              <Footer />
-            </div>
-          </SessionProvider>
+          <div className="container mx-auto px-[10px] sm:px-0">
+            <Header />
+            {children}
+            <Footer />
+          </div>
         </NextThemesProvider>
       </body>
     </html>
