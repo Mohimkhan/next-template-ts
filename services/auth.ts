@@ -14,6 +14,16 @@ export const auth = betterAuth({
       generateId: false,
     },
   },
+  user: {
+    additionalFields: {
+      designation: {
+        type: "string",
+        required: true,
+        input: true,
+        defaultValue: "WEB_DEVELOPER",
+      },
+    },
+  },
   socialProviders: {
     google: {
       prompt: "select_account",
