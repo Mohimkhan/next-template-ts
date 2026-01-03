@@ -28,8 +28,7 @@ export const auth = betterAuth({
     },
   },
   trustedOrigins: [
-    "http://localhost:3000",
-    process.env.PRODUCTION_APP_URL as string,
+    (process.env.BETTER_AUTH_URL as string) || "http://localhost:3000",
   ],
   plugins: [nextCookies()], // make sure this is the last plugin in the array
 });
