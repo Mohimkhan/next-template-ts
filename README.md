@@ -5,6 +5,10 @@ A powerful, production-ready template for Next.js developers, pre-configured wit
 ![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Better Auth](https://img.shields.io/badge/Better_Auth-black?style=for-the-badge)
+![Shadcn UI](https://img.shields.io/badge/Shadcn_UI-000000?style=for-the-badge&logo=shadcnui&logoColor=white)
+![React Toastify](https://img.shields.io/badge/React_Toastify-F04D54?style=for-the-badge&logo=react&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 
 ## ✨ Features
 
@@ -56,10 +60,12 @@ cp .env.example .env
 
 Open `.env` and configure the following variables:
 
+- `NODE_ENV` (e.g., `development` or `production`)
 - `GOOGLE_CLIENT_ID` & `GOOGLE_CLIENT_SECRET` (for Google Auth)
 - `GITHUB_CLIENT_ID` & `GITHUB_CLIENT_SECRET` (for GitHub Auth)
 - `BETTER_AUTH_SECRET` (generate with `openssl rand -base64 32`)
 - `BETTER_AUTH_URL` (e.g., `http://localhost:3000`)
+- `PRODUCTION_APP_URL` (e.g., `https://your-app.com`)
 
 ### 4. Run the development server
 
