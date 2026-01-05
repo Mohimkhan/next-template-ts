@@ -32,6 +32,11 @@ export const auth = betterAuth({
       maxAge: 300, // 5 minutes
     },
   },
+  account: {
+    accountLinking: { // link multiple accounts to a single or same user
+      trustedProviders: ["google", "github", "email-password"],
+    },
+  },
   socialProviders: {
     google: {
       prompt: "select_account",
