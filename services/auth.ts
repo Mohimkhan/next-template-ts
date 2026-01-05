@@ -24,6 +24,14 @@ export const auth = betterAuth({
       },
     },
   },
+  session: {
+    expiresIn: 259200, // 3 days
+    updateAge: 86400, // 1 day
+    cookieCache: {
+      enabled: true, // Enable caching session in cookie (default: `false`) 	
+      maxAge: 300 // 5 minutes
+    }
+  },
   socialProviders: {
     google: {
       prompt: "select_account",
