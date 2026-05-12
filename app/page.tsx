@@ -1,11 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
-import { toast } from "react-toastify";
+import { showToast } from "@/lib/utils/toast";
 
 export default function Home() {
   useEffect(() => {
-    toast.success("Welcome to Next Template");
+    showToast({
+      message: "Welcome to Next Template",
+      type: "success",
+    });
   }, []);
   return <div>Your Next Template</div>;
 }

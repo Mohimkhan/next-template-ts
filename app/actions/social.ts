@@ -1,4 +1,5 @@
 import { authClient } from "@/lib/auth-client";
+import { showToast } from "@/lib/utils/toast";
 import { toast } from "react-toastify";
 
 export const handleGoogleLogin = async () => {
@@ -7,7 +8,10 @@ export const handleGoogleLogin = async () => {
     callbackURL: "/",
     fetchOptions: {
       onSuccess: () => {
-        toast.success(`Successfully Logged In with Google`);
+        showToast({
+          message: "Successfully Logged In with Google",
+          type: "success",
+        });
       },
       onError: () => {
         toast.error(`Failed to Log In with Google`);
@@ -22,10 +26,16 @@ export const handleGithubLogin = async () => {
     callbackURL: "/",
     fetchOptions: {
       onSuccess: () => {
-        toast.success(`Successfully Logged In with Github`);
+        showToast({
+          message: "Successfully Logged In with Github",
+          type: "success",
+        });
       },
       onError: () => {
-        toast.error(`Failed to Log In with Github`);
+        showToast({
+          message: "Failed to Log In with Github",
+          type: "error",
+        });
       },
     },
   });
