@@ -8,7 +8,7 @@ const CustomToastContainer = () => {
 
   return (
     <ToastContainer
-      position="top-right"
+      position="bottom-right"
       limit={3}
       transition={Bounce}
       theme={theme}
@@ -16,7 +16,8 @@ const CustomToastContainer = () => {
       pauseOnFocusLoss={false}
       newestOnTop={true}
       closeOnClick
-      autoClose={4000}
+      autoClose={false}
+      style={{ zIndex: 1000 }}
     />
   );
 };
